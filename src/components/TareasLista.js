@@ -11,7 +11,7 @@ function TareasLista() {
             return;
         }
     /*revisar esto que no anda*/
-    const newTareas = [tarea, ...tareas];
+    const newTareas = [...tareas, tarea];
     
     setTareas(newTareas);
     console.log(...tareas);

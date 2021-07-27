@@ -21,13 +21,11 @@ const Tareas=({tareas, completeTareas, removeTareas, updateTareas}) =>{
     if (edit.id){
         return<TareasForm edit={edit} onSubmit={submitUpdate}/>;
     }
-/*Aca esta el problea, use filter o uso map? No funciona nada, HARTA!*/
-return tareas.map((tareas, index) => {
- 
- /*Si la tarea esta completa hacer la fila*/ 
-<div className={tareas.isComplete ? 'tareas-row complete' : 
-'tareas-row'} key={index}
->
+
+return(
+ tareas.map((tareas, index) => {
+  /*Si la tarea esta completa hacer la fila*/
+return <div className={tareas.isComplete ? 'tareas-row complete' : 'tareas-row'} key={index}>
 
 {/*Click y completar tareas*/}
 
@@ -47,7 +45,7 @@ return tareas.map((tareas, index) => {
 
 </div>
 </div>
-});
+}));
 
 }
 
