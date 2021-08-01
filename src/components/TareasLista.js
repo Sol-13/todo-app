@@ -3,20 +3,23 @@ import TareasForm from './TareasForm';
 import Tareas from './Tareas';
 
 function TareasLista() {
+
+    /*tareas para hacer*/
     const [tareas, setTareas] = useState ([]);
     
-   
+   /*agregar tareas, permite se agregue algo para hacer*/
     const addTarea = tarea => {
+/*Esto es para que si nadie escribe y solo se dejan espacios vacios no se agregue a la pila de tareas*/
      if (!tarea.text || /^\s*$/.test(tarea.text)) {
             return;
         }
-    /*revisar esto que no anda*/
+    /*Nuevas tareas o acciones, trae las anteriores*/
     const newTareas = [...tareas, tarea];
-    
+    /*Establezco el valor de las nuevas tareas, */
     setTareas(newTareas);
-    console.log(...tareas);
-        
 };
+
+
      /*Revisar ese if*/ 
     const updateTarea=(tareaId,newValue)=>{
         if (!newValue.text || /^\s*$/.test
@@ -24,15 +27,13 @@ function TareasLista() {
             return;
     }
     
-    setTareas(prev => prev.map 
-   (item =>(item.id===tareaId ? newValue : item)));
+    setTareas(prev => prev.map(item =>(item.id===tareaId ? newValue : item)));
   };
 
 
     /*Remover tareas*/
     const removeTarea = id => {
-        const removeArr = [...tareas].filter
-        (tarea=>tarea.id !==id);
+        const removeArr = [...tareas].filter(tarea => tarea.id !== id);
         setTareas(removeArr);
     };
 
@@ -52,11 +53,8 @@ function TareasLista() {
             <h1>Tareas para hacer</h1>
  
  {/*Esto (onSubmit) se relaciona con el codigo de math()*/}
-            <TareasForm onSubmit={addTarea}/>
-            <Tareas
-             tareas={tareas} 
-            completeTarea={completeTarea} 
-            removeTarea={removeTarea} 
+            <TareasForm onSubmit={addTarea}/> {/*formulario de tareas, agrego esto para que se vea */}
+            <Tareas tareas={tareas} completeTarea={completeTarea} removeTarea={removeTarea} 
             updateTarea={updateTarea}
             />
         </>

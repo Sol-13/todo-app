@@ -79,15 +79,32 @@ h1 {
 }
 
 .tareas-input.edit {
-  border: 2px solid #149fff;
+  /*border: 2px solid #149fff;*/
+  background: #4ac29a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a2f3e4,
+    #4ac29a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #93f3e1,
+    #4ac29a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .tareas-button.edit {
+  background: #00bf8f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #001510,
+    #00bf8f
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
+    to left,
+    #001510,
+    #00bf8f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 16px 22px;
 }
 
@@ -106,39 +123,66 @@ h1 {
   align-items: center;
   margin: 4px auto;
   color: #fff;
+  background: #cc95c0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #7aa1d2,
+    #dbd4b4,
+    #cc95c0
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
-  );
-
+    to right,
+    #7aa1d2,
+    #dbd4b4,
+    #cc95c0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 16px;
   border-radius: 5px;
   width: 90%;
 }
 
 .tareas-row:nth-child(4n + 1) {
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
+    to right,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .tareas-row:nth-child(4n + 2) {
+  background: #e55d87; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #5fc3e4,
+    #e55d87
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
-  );
+    to right,
+    #5fc3e4,
+    #e55d87
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .tareas-row:nth-child(4n + 3) {
+  background: #feac5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
+    to right,
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .icons {

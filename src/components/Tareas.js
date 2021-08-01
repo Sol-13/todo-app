@@ -4,48 +4,51 @@ import TareasForm from './TareasForm';
 import {RiCloseCircleLine} from 'react-icons/ri';
 import {TiEdit} from 'react-icons/ti';
 
-const Tareas=({tareas, completeTareas, removeTareas, updateTareas}) =>{
+function Tareas ({tareas, completeTareas, removeTareas, updateTareas}) {
+  /*funcion para configurar la edicion*/
     const [edit, setEdit]= useState ({
-        id:null,
+        id:null, 
         value:''
     });
-
-    const submitUpdate = value => {
-        updateTareas(edit.id, value)
-        setEdit({
-         id: null,
-         value:''
-        });
+ 
+   /*Revisar si el problema esta aca*/ /*Envio de actualizacion, NO ACTUALIZA*/ 
+    const submitUpdate = (value)=> {
+  /*le agregue let pero va const?*/  
+   let updateTareas=(edit.id, value);
+    setEdit({ 
+     id: null,  
+     value:''  
+    });
     };
 
-    if (edit.id){
-        return<TareasForm edit={edit} onSubmit={submitUpdate}/>;
-    }
-
+/*Con esto se puede actualizar/editar, habilita la edicion*/
+if (edit.id) {
+return <TareasForm edit={edit} onSubmit={submitUpdate}/>;
+ }
+    
 return(
- tareas.map((tareas, index) => {
-  /*Si la tarea esta completa hacer la fila*/
-return <div className={tareas.isComplete ? 'tareas-row complete' : 'tareas-row'} key={index}>
+
+ tareas.map((tarea, index) => {
+  /*Si la tarea esta completa hacer la fila*/ /*Verifica que lo que debe hacer se completo o no y lo devuelve al formulario*/
+return(
+ <div className={tarea.isComplete ? 'tareas-row complete' : 'tareas-row'} key={index}>
 
 {/*Click y completar tareas*/}
+<div key={tarea.id} onClick={()=> completeTareas(tarea.id)}>{tarea.text}</div>
 
-<div key={tareas.id} onClick={()=> completeTareas(tareas.id)}>
- {tareas.text}
-</div>
-
-{/*Baje react-icons pero no se ven los iconos, ni idea ...*/}
+{/*Iconos de react*/} 
 <div className='icons'>
- <RiCloseCircleLine 
- onclick={()=>removeTareas(tareas.id)}
+ <RiCloseCircleLine /*Identificar y remover las tareas*/
+ onclick={()=>removeTareas(tarea.id)}
  className= 'delete-icon'/>
  <TiEdit  
- onClick={()=> setEdit ({id: tareas.id, value: tareas.text})}
+ onClick={()=> setEdit ({id: tarea.id, value: tarea.text})}
  className='edit-icon'
  />
 
 </div>
 </div>
-}));
+)}));
 
 }
 
