@@ -4,7 +4,7 @@ import TareasForm from './TareasForm';
 import {RiCloseCircleLine} from 'react-icons/ri';
 import {TiEdit} from 'react-icons/ti';
 
-function Tareas ({tareas, completeTareas, removeTareas, updateTareas}) {
+function Tareas ({tareas, completeTarea, removeTarea,  updateTareas}) {
   /*funcion para configurar la edicion*/
     const [edit, setEdit]= useState ({
         id:null, 
@@ -12,13 +12,12 @@ function Tareas ({tareas, completeTareas, removeTareas, updateTareas}) {
     });
  
    /*Revisar si el problema esta aca*/ /*Envio de actualizacion, NO ACTUALIZA*/ 
-    const submitUpdate = (value)=> {
-  /*le agregue let pero va const?*/  
-   let updateTareas=(edit.id, value);
+    const submitUpdate = (value)=> {  
+   updateTareas=(edit.id, value );
     setEdit({ 
      id: null,  
-     value:''  
-    });
+     value:''   
+     });
     };
 
 /*Con esto se puede actualizar/editar, habilita la edicion*/
@@ -34,16 +33,18 @@ return(
  <div className={tarea.isComplete ? 'tareas-row complete' : 'tareas-row'} key={index}>
 
 {/*Click y completar tareas*/}
-<div key={tarea.id} onClick={()=> completeTareas(tarea.id)}>{tarea.text}</div>
+<div onClick={()=> completeTarea(tarea.id)}>{tarea.text}</div>
 
 {/*Iconos de react*/} 
 <div className='icons'>
- <RiCloseCircleLine /*Identificar y remover las tareas*/
- onclick={()=>removeTareas(tarea.id)}
- className= 'delete-icon'/>
- <TiEdit  
- onClick={()=> setEdit ({id: tarea.id, value: tarea.text})}
- className='edit-icon'
+{/*Identificar y remover las tareas*/}
+ <RiCloseCircleLine className= 'delete-icon' 
+ key={tarea.id} onClick={()=>removeTarea(tarea.id)}
+ />
+ 
+ <TiEdit   className='edit-icon'
+ key={tarea.id} onClick={()=>  setEdit ({id: tarea.id, value: tarea.text})}
+
  />
 
 </div>

@@ -33,7 +33,8 @@ function TareasLista() {
 
     /*Remover tareas*/
     const removeTarea = id => {
-        const removeArr = [...tareas].filter(tarea => tarea.id !== id);
+                          /*Va .map o .filter por el array?*/
+        let removeArr = [...tareas].filter(tarea => tarea.id !== id);
         setTareas(removeArr);
     };
 
