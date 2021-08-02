@@ -114,9 +114,6 @@ h1 {
   position: relative;
 }
 
-/*Las tareas van a tener diferentes colores a medida que se agreguen,
- modificar colores cuando se vean las filas por si no combinan*/
-
 .tareas-row {
   display: flex;
   justify-content: space-between;
@@ -140,6 +137,9 @@ h1 {
   border-radius: 5px;
   width: 90%;
 }
+
+/*Las tareas van a tener diferentes colores a medida que se agreguen (progresiones matematicas xn+1),
+ modificar colores cuando se vean las filas por si no combinan*/
 
 .tareas-row:nth-child(4n + 1) {
   background: #12c2e9; /* fallback for old browsers */
